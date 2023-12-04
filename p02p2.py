@@ -1,11 +1,6 @@
 from pathlib import Path
 import re
 
-# convert ['2 green', '2 blue', '9 red'] into {'red': 9, 'green': 2, 'blue': 2}
-# def game_list_to_dict(game_list: list[str]) -> dict[str, int]:
-#     return v
-# match = re.search(R'Game (\d+): ((\d+ (red|green|blue)) )+', line)
-
 
 def main():
     input_data = (Path(__file__).parent / 'inputs' /
@@ -28,7 +23,8 @@ def main():
             min_set['blue'] = max(min_set['blue'], handfull['blue'])
             min_set['green'] = max(min_set['green'], handfull['green'])
 
-        valid_game_pow_sum += min_set['red'] * min_set['blue'] * min_set['green']
+        valid_game_pow_sum += min_set['red'] * \
+            min_set['blue'] * min_set['green']
 
     print(valid_game_pow_sum)
 
