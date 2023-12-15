@@ -31,6 +31,7 @@ class Extrapolater:
         for row_idx, row in reversed(list(enumerate(self._rows[:-1]))):
             row.insert(0, row[0] - self._rows[row_idx + 1][0])
 
+
 def main():
     input_data = (Path(__file__).parent / 'inputs' /
                   'p09.txt').read_text().splitlines()
